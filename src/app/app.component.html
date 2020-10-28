@@ -1,23 +1,19 @@
-<app-home></app-home>
-<app-login></app-login>
-<app-registration></app-registration>
-<app-contactus></app-contactus>
 
+    <div class= "content-wrapper">
+    <section id="global header">
+        <nav id="header-topnav" class="navbar navbar-default navbar-fixed-top" data-linkcomponentname="top nav">
+            <div>
+                <app-header></app-header>
+            </div>
+        </nav>        
+    </section>
+    <section id= "content">
+            <router-outlet></router-outlet>
+    </section>
+    <section id="global footer">
+        <div>
+            <app-footer></app-footer>
+        </div>
+    </section>
+    </div>
 
-<div class= "content-wrapper">
-  <section id="global header">
-      <nav id="header-topnav" class="navbar navbar-default navbar-fixed-top" data-linkcomponentname="top nav">
-          <div>
-              <app-header></app-header>
-          </div>
-      </nav>        
-  </section>
-  <section id= "content">
-          <router-outlet></router-outlet>
-  </section>
-  <section id="global footer">
-      <div>
-          <app-footer></app-footer>
-      </div>
-  </section>
-</div>

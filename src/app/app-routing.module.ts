@@ -46,7 +46,7 @@ const routes: Routes = [
 
   },
   {
-    path: 'contact-us', component: ContactusComponent,
+    path: 'contactus', component: ContactusComponent,
     data: {
       title: 'Contact Us',
       description: 'Share market share detail',
