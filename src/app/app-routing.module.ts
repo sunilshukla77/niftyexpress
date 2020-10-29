@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { from } from 'rxjs';
-import { HomeComponent } from './home/home/home.component';
-import { ContactusComponent} from './contact/contactus/contactus.component';
-import { LoginComponent } from './signin/login/login.component';
-import { RegistrationComponent} from './signup/registration/registration.component';
+import { HomeComponent } from './home/home.component';
+import { ContactusComponent} from './contactus/contactus.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent} from './signup/registration.component';
 
 
 
