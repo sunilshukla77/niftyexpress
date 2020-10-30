@@ -1,48 +1,54 @@
-<!-- Default form register -->
-<form class="text-center border border-light p-5">
+<div class="container align-content-center border-primary">
+  <div class="card bg-light">
 
-  <p class="h4 mb-4">Sign up</p>
+    <article class="card-body mx-auto" style="width: auto;">
+      <!-- Default form register -->
+      <form class="text-center border border-light p-5">
 
-  <div class="form-row mb-4">
-    <div class="col">
-      <!-- First name -->
-      <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
-    </div>
-    <div class="col">
-      <!-- Last name -->
-      <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
-    </div>
-  </div>
+        <p class="h4 mb-4">Sign up</p>
 
-  <!-- E-mail -->
-  <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+        <div class="form-row mb-4">
+          <div class="col">
+            <!-- First name -->
+            <input type="text" id="FirstName" class="form-control" placeholder="First name">
+          </div>
+          <div class="col">
+            <!-- Last name -->
+            <input type="text" id="LastName" class="form-control" placeholder="Last name">
+          </div>
+        </div>
 
-  <!-- Password -->
-  <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-  <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-    At least 8 characters and 1 digit
-  </small>
+        <!-- E-mail -->
+        <input type="email" id="Email" class="form-control mb-4" placeholder="E-mail">
 
-  <!-- Phone number -->
-  <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
-  <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-    Optional - for two-step authentication
-  </small>
+        <!-- Password -->
+        <input type="password" id="Password" class="form-control" placeholder="Password"
+          aria-describedby="PasswordHelpBlock">
+        <small id="PasswordHelpBlock" class="form-text text-muted mb-4">
+          At least 8 characters and 1 digit
+        </small>
 
-  <!-- Newsletter -->
- <!--  <div class="row">
+        <!-- Phone number -->
+        <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number"
+          aria-describedby="PhoneHelpBlock">
+        <small id="PhoneHelpBlock" class="form-text text-muted mb-4">
+          Optional - for two-step authentication
+        </small>
+
+        <!-- Newsletter -->
+        <!--  <div class="row">
     <div class="col-md-6 mx-auto d-flex justify-content-center">
       <mdb-checkbox [default]="true">Subscribe to our newsletter</mdb-checkbox>
     </div>
   </div> -->
 
-  <!-- Sign up button -->
-  <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+        <!-- Sign up button -->
+        <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
 
-  <!-- Social register -->
-  <p>or sign up with:</p>
+        <!-- Social register -->
+        <p>or sign up with:</p>
 
-  <!-- <a type="button" class="light-blue-text mx-2">
+        <!-- <a type="button" class="light-blue-text mx-2">
     <mdb-icon fab icon="facebook"></mdb-icon>
   </a>
   <a type="button" class="light-blue-text mx-2">
@@ -55,12 +61,15 @@
     <mdb-icon fab icon="github"></mdb-icon>
   </a> -->
 
-  <hr>
+        <hr>
 
-  <!-- Terms of service -->
-  <p>By clicking
-    <em>Sign up</em> you agree to our
-    <a href="" target="_blank">terms of service</a></p>
+        <!-- Terms of service -->
+        <p>By clicking
+          <em>Sign up</em> you agree to our
+          <a href="" target="_blank">terms of service</a></p>
 
-</form>
-<!-- Default form register -->
+      </form>
+      <!-- Default form register -->
+    </article>
+  </div>
+</div>

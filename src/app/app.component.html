@@ -1,21 +1,9 @@
-
-<div class= "container-fluid">
-    <section id="global header">
-        <nav id="header-topnav" class="navbar navbar-default navbar-fixed-top" data-linkcomponentname="top nav">
-            <div>
-                <app-header></app-header>
-            </div>
-        </nav>        
-    </section>
-    <section id= "content">
-            <router-outlet></router-outlet>
-    </section>
-    <section id="global footer">
-        <nav class="navbar fixed-bottom navbar-light bg-ligh" data-linkcomponentname="fixed-bottom">
-            <div>
-                <app-footer></app-footer>
-            </div>
-        </nav>
-    </section>
-</div>
-
+<app-header></app-header>
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
+<nav class="navbar fixed-bottom navbar-light bg-ligh" data-linkcomponentname="fixed-bottom">
+  <div>
+    <app-footer></app-footer>
+  </div>
+</nav>

@@ -1,1 +1,45 @@
-<p>contactus works!</p>
+<div class="container align-content-center border-primary">
+  <div class="card bg-light">
+
+    <article class="card-body mx-auto" style="width: auto;">
+      <!-- Default form contact -->
+      <form class="text-center border border-light p-5">
+
+        <p class="h4 mb-4">Contact us</p>
+
+        <!-- Name -->
+        <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
+          class="form-control mb-4" placeholder="Name">
+
+        <!-- Email -->
+        <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
+          class="form-control mb-4" placeholder="E-mail">
+
+        <!-- Subject -->
+        <label>Subject</label>
+        <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+          <option value="" disabled>Choose option</option>
+          <option value="1" selected>Feedback</option>
+          <option value="2">Report a bug</option>
+          <option value="3">Feature request</option>
+          <option value="4">Feature request</option>
+        </select>
+
+        <!-- Message -->
+        <div class="form-group">
+          <textarea formControlName="contactFormMessage" class="form-control rounded-0" mdbInput
+            id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+        </div>
+
+        <!-- Copy -->
+        <!-- <mdb-checkbox [default]="true" class="mb-4">Send me a copy of this message</mdb-checkbox> -->
+
+        <!-- Send button -->
+        <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
+          type="submit">Send</button>
+
+      </form>
+      <!-- Default form contact -->
+    </article>
+  </div>
+</div>
