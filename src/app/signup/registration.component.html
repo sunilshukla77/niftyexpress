@@ -1,82 +1,72 @@
-<div class="container align-content-center border-primary">
-  <div class="card bg-light">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
-    <article class="card-body mx-auto" style="width: auto;">
-      <!-- Default form register -->
-      <form class="form-horizontal text-center border border-light p-5" #form="ngForm" (ngSubmit)="onSubmit(form)">
+<div class="card bg-light">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Create Account</h4>
+	<p class="text-center">Get started with your free account</p>
+	<p>
+		<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+		<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+	</p>
+	<p class="divider-text">
+        <span class="bg-light">OR</span>
+    </p>
+	<form  #form = "ngForm" (ngSubmit)="onSubmit(form)">
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="name" class="form-control" placeholder="Full name" type="text" [(ngModel)]="signup.fname">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+        <input name="" class="form-control" placeholder="Email address" type="email">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+		</div>
+		<select class="custom-select" style="max-width: 120px;">
+		    <option selected="">+91</option>
+		    <option value="1">+1</option>
+		    <option value="2">+4</option>
+		    <option value="3">+7</option>
+		</select>
+    	<input name="" class="form-control" placeholder="Phone number" type="text">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+		</div>
+		<select class="form-control">
+			<option selected=""> Select job type</option>
+			<option>Designer</option>
+			<option>Manager</option>
+			<option>Accaunting</option>
+		</select>
+	</div> <!-- form-group end.// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input class="form-control" placeholder="Create password" type="password">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input class="form-control" placeholder="Repeat password" type="password">
+    </div> <!-- form-group// -->                                      
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+    </div> <!-- form-group// -->      
+    <p class="text-center">Have an account? <a href="">Log In</a> </p>   
 
-        <p class="h4 mb-4">Sign up</p>
+    {{signup | json}}    
 
-        <div class="form-group form-row mb-4">
-          <div class="col">
-            <!-- First name -->
-            <input type="text" id="FirstName" class="form-control" placeholder="First name" [(ngModel)]="signup.fname">
-          </div>
-          <div class="col">
-            <!-- Last name -->
-            <input type="text" id="LastName" class="form-control" placeholder="Last name" [(ngModel)]="signup.lname">
-          </div>
-        </div>
-        <div class="form-group mb-4">
-        <!-- E-mail -->
-        <input type="email" id="Email" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="signup.emailId">
-        <!-- User Name-->
-        <input type="username" id="UserName" class="form-control mb-4" placeholder="User name"
-          [(ngModel)]="signup.username">
+</form>
+</article>
+</div> <!-- card.// -->
 
-        <!-- Password -->
-        <input type="password" id="Password" class="form-control" placeholder="Password"
-          aria-describedby="PasswordHelpBlock" [(ngModel)]="signup.password">
-        <small id="PasswordHelpBlock" class="form-text text-muted mb-4">
-          At least 8 characters and 1 digit
-        </small>
-
-        <!-- Phone number -->
-        <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number"
-          aria-describedby="PhoneHelpBlock" [(ngModel)]="signup.mobileNo">
-        <small id="PhoneHelpBlock" class="form-text text-muted mb-4">
-          Optional - for two-step authentication
-        </small>
-        </div>
-
-        <!-- Newsletter -->
-        <!--  <div class="row">
-    <div class="col-md-6 mx-auto d-flex justify-content-center">
-      <mdb-checkbox [default]="true">Subscribe to our newsletter</mdb-checkbox>
-    </div>
-  </div> -->
-
-        <!-- Sign up button -->
-       <!--  <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign up</button> -->
-
-        <!-- Social register -->
-        <!-- <p>or sign up with:</p>
- -->
-        <!-- <a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="facebook"></mdb-icon>
-  </a>
-  <a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="twitter"></mdb-icon>
-  </a>
-  <a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="linkedin"></mdb-icon>
-  </a>
-  <a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="github"></mdb-icon>
-  </a> -->
-
-        <hr>
-
-        <!-- Terms of service -->
-        <div class="form-group">
-          <div class="col-sm-offset-4 col-sm-4">
-            <button type="submit" class="btn btn btn-dark">Register</button>
-          </div>
-        </div>
-        {{ signup | json}}
-
-      </form>
-      <!-- Default form register -->
-    </article>
-  </div>
-</div>
