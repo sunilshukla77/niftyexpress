@@ -16,13 +16,25 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-        <input name="name" class="form-control" placeholder="Full name" type="text" [(ngModel)]="signup.fname">
+        <input name="fname" class="form-control" placeholder="First name" type="text" [(ngModel)]="signup.fname">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+   </div>
+      <input name="lname" class="form-control" placeholder="Last name" type="text" [(ngModel)]="signup.lname">
+  </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+        <input name="emailId" class="form-control" placeholder="Email address" type="email" [(ngModel)]="signup.emailId">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
-        <input name="" class="form-control" placeholder="Email address" type="email">
+        <input name="username" class="form-control" placeholder="User Name" type="username" [(ngModel)]="signup.username">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
@@ -34,7 +46,7 @@
 		    <option value="2">+4</option>
 		    <option value="3">+7</option>
 		</select>
-    	<input name="" class="form-control" placeholder="Phone number" type="text">
+    	<input name="mobileNo" class="form-control" placeholder="Phone number" type="text" [(ngModel)]="signup.mobileNo">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
@@ -51,7 +63,7 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input class="form-control" placeholder="Create password" type="password">
+        <input name = "password" input class="form-control" placeholder="Create password" type="password" [(ngModel)]="signup.password">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
