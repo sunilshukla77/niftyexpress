@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { from } from 'rxjs';
 import { SignupModel } from '../model/SignupModel';
 import { SignupService } from '../service/signup.service';
 
@@ -10,8 +11,10 @@ import { SignupService } from '../service/signup.service';
 })
 export class RegistrationComponent implements OnInit {
 
+  constructor(private signupService: SignupService){}
+
   private _signup: SignupModel = {
-    fname: null,
+    name: null,
     lname: null,
     username: null,
     emailId: null,
@@ -27,13 +30,14 @@ export class RegistrationComponent implements OnInit {
     this._signup = value;
   }
 
-  constructor(private signupService: SignupService) { }
-
-  ngOnInit() {
+   ngOnInit() {
   }
 
   onSubmit(form: NgForm){
-
+    this.signupService.onSubmitForm(this.signup).subscribe(
+      result => console.log('Success', result),
+      error => console.log('Not Registered ', error)
+    );
   }
 
 }

@@ -1,5 +1,5 @@
 export class SignupModel {
-    fname: string;
+    name: string;
     lname: string;
     emailId: string;
     username: string;
