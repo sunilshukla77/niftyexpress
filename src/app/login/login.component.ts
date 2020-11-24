@@ -3,6 +3,7 @@ import { from } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { Login } from '../model/login-model';
 import { LoginService } from '../service/login.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({

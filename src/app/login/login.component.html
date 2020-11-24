@@ -6,7 +6,7 @@
   
           <router-outlet></router-outlet>
   
-          <form class="form-signin">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <!-- <div style="text-align:center">
               <img src="/assets/images/logo.PNG" width="mx-auto" height="mx-auto" alt="AS2 Logo">
             </div> -->
@@ -14,9 +14,9 @@
                 <h4 class="card-title mt-3 text-center bg-light"> Login </h4>
              </div>
             <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="emailId" id="emailId" class="form-control" placeholder="Email address" required="" autofocus="">
+            <input type="emailId" id="emailId" class="form-control" placeholder="Email address" required="" autofocus="" formControlName="emailId">
             <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="password" class="form-control" placeholder="Password" required="">
+            <input type="password" id="password" class="form-control" placeholder="Password" required="" formControlName="password">
             <div class="checkbox mb-3">
               <label>
                 <input type="checkbox" value="remember-me"> Remember me
@@ -25,7 +25,7 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
           
         
-            {{signin | json}}
+            {{loginForm | json}}
           </form>
         </div>
   
