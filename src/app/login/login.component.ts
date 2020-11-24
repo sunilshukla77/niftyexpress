@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
-import { NgForm } from '@angular/forms';
-import { Login } from '../model/login-model';
 import { LoginService } from '../service/login.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -14,26 +12,19 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   constructor(private loginService: LoginService) { }
-  private signin: Login = {
-    emailId: null,
-    password:  null
-  };
 
-  public get login() : Login {
-    return this.signin;
-  }
-
-  public set login(value : Login) {
-    this.signin = value;
-  }
+  loginForm = new FormGroup({
+    emailId : new FormControl(),
+    password : new FormControl()
+  });
 
   ngOnInit() {
   }
-  onSubmit(form: NgForm) {
+  onSubmit() {
     // this.service.method(this.form).subscribe(data => this.employees.data);
-    this.loginService.onSubmitForm(this.login).subscribe(
-      result => console.log('Success', result),
-      error => console.log('error', error)
-    );
+    // this.loginService.onSubmitForm(this.login).subscribe(
+      // result => console.log('Success', result),
+      // error => console.log('error', error)
+      console.log(this.loginForm.value);
   }
 }

@@ -14,7 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SignupService } from './service/signup.service';
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
@@ -31,5 +31,4 @@ import { SignupService } from './service/signup.service';
   ],
   providers: [SignupService],
   bootstrap: [AppComponent]
-})
-export class AppModule { }
+}) export class AppModule {}

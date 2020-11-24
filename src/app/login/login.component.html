@@ -14,23 +14,19 @@
                 <h4 class="card-title mt-3 text-center bg-light"> Login </h4>
              </div>
             <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="emailId" id="emailId" class="form-control" placeholder="Email address" required="" autofocus="" formControlName="emailId">
+            <input type="emailId" id="emailId" class="form-control" placeholder="Email address" formControlName ="emailId">
             <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="password" class="form-control" placeholder="Password" required="" formControlName="password">
+            <input type="password" id="password" class="form-control" placeholder="Password" formControlName = "password">
             <div class="checkbox mb-3">
               <label>
                 <input type="checkbox" value="remember-me"> Remember me
               </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-          
-        
-            {{loginForm | json}}
+            <!-- {{loginForm | json}} -->
           </form>
         </div>
-  
       </article>
-      
     </div>
   </div>
   

@@ -10,14 +10,8 @@ import { SignupModel } from '../model/SignupModel';
   providedIn: 'root'
 })
 export class SignupService {
-
   constructor(private http: HttpClient) { }
-
-  onSubmitForm(signupForm : SignupModel) : Observable<any> {
-
+  onSubmitForm(signupForm: SignupModel): Observable<any> {
     return this.http.post('http://localhost:8080/niftyexpress/signup', signupForm);
-
   }
-
-  
 }
