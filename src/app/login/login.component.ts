@@ -22,9 +22,9 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     // this.service.method(this.form).subscribe(data => this.employees.data);
-    // this.loginService.onSubmitForm(this.login).subscribe(
-      // result => console.log('Success', result),
-      // error => console.log('error', error)
+     this.loginService.onSubmitForm(this.loginForm).subscribe(
+       result => console.log('Success', result),
+       error => console.log('error', error));
       console.log(this.loginForm.value);
   }
 }

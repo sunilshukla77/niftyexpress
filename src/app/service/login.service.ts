@@ -11,7 +11,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  /* onSubmitForm(): Observable<any> {
-    return this.http.post('http://localhost:8080/niftyexpress/signin', loginform);
-  } */
+   onSubmitForm(loginForm): Observable<any> {
+    return this.http.post('http://localhost:8080/niftyexpress/signin', loginForm);
+  } 
 }
