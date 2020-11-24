@@ -13,9 +13,15 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignupService } from './service/signup.service';
 
-
 @NgModule({
-  declarations: [  ],
+  declarations: [ 
+    AppComponent,
+    HeaderComponent,
+    RegistrationComponent,
+    LoginComponent,
+    HomeComponent,
+    ContactusComponent,
+    FooterComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,
