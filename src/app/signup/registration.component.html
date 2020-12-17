@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+9<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
 <div class="card bg-light">
 <article class="card-body mx-auto" style="max-width: 400px;">
@@ -11,44 +11,44 @@
 	<p class="divider-text">
         <span class="bg-light">OR</span>
     </p>
-	<form  #form = "ngForm" (ngSubmit)="onSubmit(form)">
+	<form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 	<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-        <input type="text" class="form-control" id="name" required maxlength="15" minlength="2"
-		ngModel name="name" #name="ngModel" placeholder="First Name">
-		<div *ngIf="name.invalid && (name.dirty || name.touched)"
-    class="alert alert-danger">
-  <div *ngIf="name.errors.required">
-    Name is required.
-  </div>
-  <div *ngIf="name.errors.minlength">
-    Name cannot be more than 15 characters long.
-  </div>
-  <div *ngIf="name.errors.minlength">
-    Name must be at least 2 characters long.
-  </div>
-</div>
+		 <input type="text" class="form-control" formControlName="name">
+		 <span class="text-danger"
+			 *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required">
+			 Name is required
+		 </span>
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     <div class="input-group-prepend">
       <span class="input-group-text"> <i class="fa fa-user"></i> </span>
    </div>
-      <input name="lname" class="form-control" placeholder="Last name" type="text" [(ngModel)]="signup.lname">
+      <input type="text" class="form-control" formControlName="lname" placeholder="Last name">
   </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
-        <input name="emailId" class="form-control" placeholder="Email address" type="email" [(ngModel)]="signup.emailId">
-    </div> <!-- form-group// -->
+		 <input type="text" class="form-control" formControlName="emailId">
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.emailId.touched || submitted) && registerFormControl.emailId.errors?.required">
+                                Email is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerFormControl.emailId.errors?.email">
+                                Enter a valid email address
+                            </span>
+	</div>
     <div class="form-group input-group">
     	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-        <input name="username" class="form-control" placeholder="User Name" type="username" [(ngModel)]="signup.username">
-    </div> <!-- form-group// -->
+        <input type="text" class="form-control" formControlName="username" placeholder="User Name">
+	</div>
+     <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
@@ -59,7 +59,7 @@
 		    <option value="2">+4</option>
 		    <option value="3">+7</option>
 		</select>
-    	<input name="mobileNo" class="form-control" placeholder="Phone number" type="text" [(ngModel)]="signup.mobileNo">
+    	<input type="text" class="form-control" formControlName="mobile" placeholder="Mobile Number">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
@@ -69,41 +69,46 @@
 			<option selected=""> Select job type</option>
 			<option>Designer</option>
 			<option>Manager</option>
-			<option>Accaunting</option>
+			<option>Accounting</option>
 		</select>
 	</div> <!-- form-group end.// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-		<input type="text" class="form-control" id="password" required UserRegistrationFormValidators.passwordShouldBeValid
-		maxlength="15" minlength="8" [(ngModel)]="signup.password" name="password" #name="ngModel" placeholder="Enter Password">
-		<div *ngIf="name.invalid && (name.dirty || name.touched)"
-    class="alert alert-danger">
-  <div *ngIf="name.errors.required">
-    Password is required.
-  </div>
-  <div *ngIf="name.errors.minlength">
-    Password cannot be more than 15 characters long.
-  </div>
-  <div *ngIf="name.errors.minlength">
-    Password must be at least 8 characters long.
-  </div>
-  <div *ngIf="name.errors.characters">
-    Password must not have @, % characters.
-  </div>
-</div>
-
-        <input class="form-control" placeholder="Repeat password" type="password">
-    </div> <!-- form-group// -->                                      
+		<input type="password" class="form-control" formControlName="password">
+		<span class="text-danger"
+			*ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
+			Password is required
+		</span>
+		<span class="text-danger"
+			*ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.invalidPassword">
+			Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+			letter and 1 number
+		</span>
+    </div>
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+		<input type="password" class="form-control" formControlName="confirmPassword">
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.confirmPassword.touched || submitted)&& registerFormControl.confirmPassword.errors?.required">
+                                Confirm Password is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerFormControl.confirmPassword.touched && registerFormControl.confirmPassword.errors?.passwordMismatch">
+                                Passwords doesnot match
+                            </span>
+    </div>
+    <!-- form-group// -->                                      
     <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
     </div> <!-- form-group// -->      
     <p class="text-center">Have an account? <a href="">Log In</a> </p>   
 
-    {{signup | json}}    
+	{{signup | json}}    
 
 </form>
 </article>
-</div> <!-- card.// -->
 
