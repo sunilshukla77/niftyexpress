@@ -36,7 +36,10 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
+      lname: ['',Validators.required],
       emailId: ['', [Validators.required, Validators.email]],
+      username: ['', Validators.required],
+      mobileNo: ['', Validators.required],
       password: ['', Validators.compose([Validators.required, this.customValidator.patternValidator()])],
       confirmPassword: ['', [Validators.required]],
     },
@@ -51,11 +54,11 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
-    if (this.registerForm.valid) {
-      alert('Form Submitted succesfully!!!\n Check the values in browser console.');
-      console.table(this.registerForm.value);
-    }
+    this.customValidator.onSubmitForm(this.signup).subscribe(
+      result => console.log('Success', result),
+      error => console.log('Not Registered ', error)
+    );
+
   }
 
 }

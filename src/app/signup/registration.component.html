@@ -1,4 +1,4 @@
-9<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
 <div class="card bg-light">
 <article class="card-body mx-auto" style="max-width: 400px;">
@@ -11,12 +11,12 @@
 	<p class="divider-text">
         <span class="bg-light">OR</span>
     </p>
-	<form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+	<form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit(form)">
 	<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-		 <input type="text" class="form-control" formControlName="name">
+		 <input type="text" class="form-control" formControlName= "name" name="name" [(ngModel)]="signup.name" placeholder="First Name">
 		 <span class="text-danger"
 			 *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required">
 			 Name is required
@@ -26,13 +26,17 @@
     <div class="input-group-prepend">
       <span class="input-group-text"> <i class="fa fa-user"></i> </span>
    </div>
-      <input type="text" class="form-control" formControlName="lname" placeholder="Last name">
-  </div> <!-- form-group// -->
+      <input type="text" class="form-control" formcontrolName="lname" name="lname" [(ngModel)]="signup.lname" placeholder="Last name">
+	  <span class="text-danger"
+	  *ngIf="registerFormControl.lname.errors?.required">
+	  Last Name is required
+  </span>  
+	</div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
-		 <input type="text" class="form-control" formControlName="emailId">
+		 <input type="text" class="form-control" formControlName="emailId" name="emailId" [(ngModel)]="signup.emailId" placeholder="Email">
                             <span class="text-danger"
                                 *ngIf="(registerFormControl.emailId.touched || submitted) && registerFormControl.emailId.errors?.required">
                                 Email is required
@@ -46,7 +50,11 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-        <input type="text" class="form-control" formControlName="username" placeholder="User Name">
+        <input type="text" class="form-control" formControlName="username" name="username" [(ngModel)]="signup.username" placeholder="User Name">
+		<span class="text-danger"
+		*ngIf="(registerFormControl.username.touched || submitted) && registerFormControl.username.errors?.required">
+		User Name is required
+	</span>
 	</div>
      <!-- form-group// -->
     <div class="form-group input-group">
@@ -59,8 +67,12 @@
 		    <option value="2">+4</option>
 		    <option value="3">+7</option>
 		</select>
-    	<input type="text" class="form-control" formControlName="mobile" placeholder="Mobile Number">
-    </div> <!-- form-group// -->
+    	<input type="text" class="form-control" formControlName="mobileNo" name="mobileNo" [(ngModel)]="signup.mobileNo" placeholder="Mobile Number">
+		<span class="text-danger"
+		*ngIf="registerFormControl.mobileNo.errors?.required">
+		Mobile Number is required
+	</span>
+	</div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
@@ -76,7 +88,7 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-		<input type="password" class="form-control" formControlName="password">
+		<input type="password" class="form-control" formControlName="password" name="password" [(ngModel)]="signup.password" placeholder="Password">
 		<span class="text-danger"
 			*ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
 			Password is required
@@ -91,7 +103,7 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-		<input type="password" class="form-control" formControlName="confirmPassword">
+		<input type="password" class="form-control" formControlName="confirmPassword" name="password" placeholder="Confirm Password">
                             <span class="text-danger"
                                 *ngIf="(registerFormControl.confirmPassword.touched || submitted)&& registerFormControl.confirmPassword.errors?.required">
                                 Confirm Password is required
@@ -111,4 +123,5 @@
 
 </form>
 </article>
+</div>
 
