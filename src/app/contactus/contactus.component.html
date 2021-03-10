@@ -3,17 +3,38 @@
 
     <article class="card-body mx-auto" style="width: auto;">
       <!-- Default form contact -->
-      <form class="text-center border border-light p-5">
+      <form class="form" [formGroup]="contactusForm" (ngSubmit)="onSubmit(form)"></form>
+
 
         <p class="h4 mb-4">Contact us</p>
-
+        
         <!-- Name -->
-        <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
-          class="form-control mb-4" placeholder="Name">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+           </div>
+           <input type="text" class="form-control" formControlName= "name" name="name" [(ngModel)]="contactus.name" placeholder="Name">
+           <span class="text-danger"
+             *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required">
+             Name is required
+           </span>
+          </div>
 
         <!-- Email -->
-        <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
-          class="form-control mb-4" placeholder="E-mail">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+         </div>
+         <input type="text" class="form-control" formControlName="emailId" name="emailId" [(ngModel)]="contactus.emailId" placeholder="Email">
+                                <span class="text-danger"
+                                    *ngIf="(registerFormControl.emailId.touched || submitted) && registerFormControl.emailId.errors?.required">
+                                    Email is required
+                                </span>
+                                <span class="text-danger"
+                                    *ngIf="registerFormControl.emailId.errors?.email">
+                                    Enter a valid email address
+                                </span>
+        </div>
 
         <!-- Subject -->
         <label>Subject</label>
@@ -43,3 +64,6 @@
     </article>
   </div>
 </div>
+
+
+

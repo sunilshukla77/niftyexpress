@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignupService } from './service/signup.service';
+import { ContactusService } from './service/contactus.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { SignupService } from './service/signup.service';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [SignupService],
+  providers: [SignupService, ContactusService],
   bootstrap: [AppComponent]
 }) export class AppModule {}
 
